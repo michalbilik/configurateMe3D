@@ -3,7 +3,7 @@ import { Window } from "./components";
 
 function App() {
   return (
-    <div>
+    <div className="h-screen">
       <Window />
     </div>
   );

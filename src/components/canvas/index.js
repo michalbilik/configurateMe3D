@@ -1,3 +1,3 @@
-import BoxCanvas from "./Box";
+import Scene from "./Scene";
 
-export {BoxCanvas};
+export { Scene };

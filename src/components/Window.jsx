@@ -1,12 +1,14 @@
-import { Box } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import React from "react";
-import { BoxCanvas } from "./canvas";
+import Scene from "./canvas/Scene";
 
 const Window = () => {
   return (
-    <div className="bg-slate-800 flex justify-center items-center h-screen">
-      <BoxCanvas />
-    </div>
+    <Canvas dpr={[1, 2]}>
+      <color attach="background" args={["#213547"]} />
+      <fog attach="fog" args={["#213547", 10, 20]} />
+      <Scene />
+    </Canvas>
   );
 };
 
