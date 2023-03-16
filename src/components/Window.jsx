@@ -9,8 +9,8 @@ const Window = () => {
     <CustomizationProvider>
       <div className="App">
         <Canvas dpr={[1, 2]}>
-          <color attach="background" args={["#8a8383"]} />
-          <fog attach="fog" args={["#8a8383", 10, 20]} />
+          <color attach="background" args={["#181818"]} />
+          <fog attach="fog" args={["#181818", 10, 20]} />
           <Scene />
         </Canvas>
         <Configurator />

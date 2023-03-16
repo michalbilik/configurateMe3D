@@ -23,13 +23,13 @@ const Scene = () => {
               blur={[300, 100]}
               resolution={2048}
               mixBlur={1}
-              mixStrength={40}
-              roughness={1}
-              depthScale={1.2}
+              mixStrength={10}
+              roughness={2}
+              depthScale={0.5}
               minDepthThreshold={0.4}
               maxDepthThreshold={1.4}
-              color="#101010"
-              metalness={0.5}
+              color="#373737"
+              metalness={0.2}
             />
           </mesh>
         </PresentationControls>

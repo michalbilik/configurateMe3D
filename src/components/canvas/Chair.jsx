@@ -21,17 +21,6 @@ const loadTextureProps = (normalMap, roughnessMap, aoMap) => {
   return textureProps;
 };
 
-const preloadTextures = () => {
-  useTexture.preload([
-    "./textures/leather/Leather_008_Normal.jpg",
-    "./textures/leather/Leather_008_Roughness.jpg",
-    "./textures/leather/Leather_008_Ambient Occlusion.jpg",
-    "./textures/fabric/Fabric_Knitted_006_normal.jpg",
-    "./textures/fabric/Fabric_Knitted_006_roughness.jpg",
-    "./textures/fabric/Fabric_Knitted_006_ambientOcclusion.jpg",
-  ]);
-};
-
 const Chair = (props) => {
   const { nodes, materials } = useGLTF("./models/chair.gltf");
   const { material, legs, chairColor, cushionColor } = useCustomization();
@@ -56,6 +45,8 @@ const Chair = (props) => {
             ? leatherTextureProps
             : fabricTextureProps)}
           color={chairColor.color}
+          roughness={2}
+          metalness={1}
         />
       </mesh>
       <mesh
