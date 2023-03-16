@@ -33,7 +33,7 @@ const preloadTextures = () => {
 };
 
 const Chair = (props) => {
-  const { nodes, materials } = useGLTF("public/models/chair.gltf");
+  const { nodes, materials } = useGLTF("./models/chair.gltf");
   const { material, legs, chairColor, cushionColor } = useCustomization();
 
   const leatherTextureProps = loadTextureProps(
