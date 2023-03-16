@@ -85,4 +85,4 @@ const Chair = (props) => {
 
 export default Chair;
 
-useGLTF.preload("../../../public/models/chair.gltf");
+useGLTF.preload("./models/chair.gltf");
