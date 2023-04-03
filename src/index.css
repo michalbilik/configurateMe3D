@@ -1,27 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Duru+Sans');
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Duru+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens;
 
+/* Typography */
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
 
+/* Base Styles */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,19 +38,7 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -63,6 +58,88 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* App */
+.App {
+  width: 100vw;
+  height: 100vh;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Configurator */
+.configurator {
+  position: fixed;
+  right: 24px;
+  bottom:5vh;
+  width: 360px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.configurator__section__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.configurator__section__values {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.item:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.item__dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: solid 2px #999999;
+}
+
+.item.item--active .item__dot {
+  border: solid 2px white;
+}
+
+.item__label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  color: #aaa;
+  text-transform: capitalize;
+}
+
+.item.item--active .item__label {
+  color: white;
+}
+
+/* Dark Theme */
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -74,4 +151,23 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+  .configurator {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* Rendering */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }

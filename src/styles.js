@@ -1,12 +1,12 @@
 const styles = {
   app: "w-screen h-screen select-none",
 
-  configurator: "fixed right-4 bottom-1/4 w-96 p-6 flex flex-col gap-4",
+  configurator:
+    "w-full p-4 md:w-96 md:p-6 right-0 bottom-0 md:bottom-1/8 flex flex-col gap-4",
 
   configurator__section__title: "uppercase font-bold font-poppins text-white",
 
-  configurator__section__values:
-    "flex flex-row gap-8 items-center flex-wrap py-4",
+  configurator__section__values: "flex flex-row flex-wrap gap-4 py-4",
 
   item: "flex flex-col items-center transition-all duration-400 hover:opacity-90",
 
