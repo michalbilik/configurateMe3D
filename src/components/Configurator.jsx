@@ -1,5 +1,7 @@
-import { useCustomization } from "../contexts/Custamization";
-import { styles } from "../styles";
+import {
+  useCustomization,
+  calculateTotalPrice,
+} from "../contexts/Custamization";
 
 const Configurator = () => {
   const {
@@ -14,6 +16,13 @@ const Configurator = () => {
     cushionColor,
     setCushionColor,
   } = useCustomization();
+
+  const totalPrice = calculateTotalPrice(
+    material,
+    legs,
+    chairColor,
+    cushionColor
+  );
 
   return (
     <div className="configurator">
@@ -88,6 +97,14 @@ const Configurator = () => {
             onClick={() => setLegs(2)}
           >
             <div className="item__label">Classic</div>
+          </div>
+        </div>
+      </div>
+      <div className="configurator__section">
+        <div className="configurator__section__title">Total Price</div>
+        <div className="configurator__section__values">
+          <div className="item">
+            <div className="item__label">${totalPrice.toFixed(2)}</div>
           </div>
         </div>
       </div>
